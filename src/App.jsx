@@ -1,5 +1,5 @@
 import React from "react";
-import OtherInput from "./tutorial/Form/otherInput";
+import OtherInput from "./Learning-React/Form/otherInput";
 
 function App() {
   return (
