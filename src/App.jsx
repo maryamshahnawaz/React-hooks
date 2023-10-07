@@ -1,11 +1,13 @@
 import React from "react";
 
-import UseRefBasics from "./Learning-React/useRef/userefbasics";
+import Navbar from "./Learning-React/context-api/context/Navbar";
 
 function App() {
+
+  
   return (
   <div className="container">
-<UseRefBasics/>
+<Navbar/>
   </div>
   )
 }

@@ -12,7 +12,7 @@ const CleanupFunction = () =>{
   </>
  )
 }
-//if we use component on conditionally,useeffect initial rednder is gonna happen every time when conmopent is mounted.
+//if we use component on conditionally,use effect initial render is gonna happen every time when component is mounted.
 const Component = () => {
  useEffect(()=>{
  const someFunc = () => {

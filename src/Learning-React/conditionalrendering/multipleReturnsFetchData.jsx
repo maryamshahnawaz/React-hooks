@@ -1,40 +1,16 @@
 import { useState, useEffect } from "react"
+import useFetch from "../customHook/useFetch";
 
 
 // usually three options
 // loading
 // error
-// suucess
-//destructuring alwats happens after the conditional redering
+// success
+//destructuring always happens after the conditional re-rendering
 const url = 'https://api.github.com/users/maryamshahnawaz'
-const multipleReturnsFetchData =() => {
+const MultipleReturnsFetchData =() => {
 
-const [isLoading, setIsLoading] = useState(true);
-const [isError, setIsError] = useState(false);
-const [user, setUser] = useState(null);
-
-
-useEffect(() => {
- const fetchUser = async () => {
- try {
-  const response = await fetch(url);
-  if(!response.ok){
-    setIsError(true);
-    setIsLoading(false);
-    return
-  }
-  const user = await response.json();
-  setUser(user);
-  console.log(user)
- }
-  catch (error) {
-  setIsError(true)
-  console.log(error);
- }
-   setIsLoading(false);
-}
-fetchUser();
-},[]);
+  const {isError,isLoading,data: user} = useFetch(url);
 
 if(isLoading){
  return <h1>Loading....</h1>
@@ -55,4 +31,4 @@ const {avatar_url,name,company,bio} = user;
  )
 }
 
-export default multipleReturnsFetchData;
+export default MultipleReturnsFetchData;
